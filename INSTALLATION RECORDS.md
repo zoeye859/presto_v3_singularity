@@ -148,7 +148,7 @@ $ ./lolcow_latest.sif
 
 # 2.Build your own container with sandbox -- a short intro
 
-Singularity v3.0 and above produces immutable images in the Singularity Image File (SIF) format. This ensures reproducible and verifiable images and allows for many extra benefits such as the ability to sign and verify your containers.
+Singularity v3.0 and above produces immutable images. This ensures reproducible and verifiable images and allows for many extra benefits such as the ability to sign and verify your containers.
 However, during testing and debugging you may want an image format that is writable. This way you can shell into the image and install software and dependencies until you are satisfied that your container will fulfill your needs. For these scenarios, Singularity also supports the sandbox format (which is really just a directory).
 Sandbox Directories
 
@@ -158,9 +158,9 @@ To build into a sandbox (container in a directory) use the build --sandbox comma
 $ sudo singularity -d build --sandbox ubuntu/ docker://ubuntu
 ```
 
-This helps me to build a SIF on top of a fresh ubuntu
+This helps me to build a container on top of a fresh ubuntu
 
-Run this container (or SIF) on top of the fresh ubuntu, I need to use the option '--writable':
+Run this container (or .simg) on top of the fresh ubuntu, I need to use the option '--writable':
 
 ```
 $ sudo singularity shell --writable ubuntu/
@@ -182,7 +182,7 @@ Then exit the container by
 Singularity ubuntu:~> exit
 ```
 
-Use 'build' to create your own new SIF
+Use 'build' to create your own new .simg file
 
 ```
 $ sudo singularity build ubuntu-vim.simg ubuntu/
@@ -199,7 +199,7 @@ Singularity ubuntu-vim.simg:~> vim
 Vim should already been installed
 
 
-# 3.Install Python3, pip3 and matplotlib (to make you familiar with your SIF)
+# 3.Install Python3, pip3 and matplotlib (to make you familiar with your container)
 
 If Ubuntu doesn't have python3 installed (very unlikely), you can follow this link to install Python3:
 (https://phoenixnap.com/kb/how-to-install-python-3-ubuntu)
@@ -229,7 +229,7 @@ Under the python environment
 import matplotlib 
 ```
 
-Of course, now you can build another SIF to test whether the newly installed packages are there.
+Of course, now you can build another container to test whether the newly installed packages are there.
 
 
 # 4.Install PRESTO v3.0.1 with python3
@@ -257,7 +257,7 @@ apt-get install gfortran libx11-dev
 
 Make a directory called PSRSOFT somewhere you feel comfortable with. 
 
-**This directory will be copied to root directory anyway when we build the final SIF**
+**This directory will be copied to root directory anyway when we build the final container**
 
 
 ```
@@ -482,7 +482,7 @@ Done :+1:
 sudo singularity build presto-yhy.simg ubuntu/
 ```
 
-Then you can follow the README in this github to use the SIF.
+Then you can follow the README in this github to use the .simg
 
 
 
