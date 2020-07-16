@@ -472,7 +472,7 @@ Now, just move the whole /PSRSOFT to /
 mv PSRSOFT /
 ```
 
-Done :+1
+Done :+1:
 
 ## 4.8 Install PRESTO
 
