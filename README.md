@@ -10,7 +10,7 @@ wget http://haoyangye.com/presto_yhy.simg
 
 I am also looking into **Push it to Singularity library**
 
-You can issue a problem here or contact me for it HAOYANG.YE AT CANTAB.NET
+You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
 
 ## HOW TO USE THE CONTAINER
