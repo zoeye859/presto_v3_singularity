@@ -2,7 +2,14 @@
 
 ## HOW TO DOWNLOAD THE CONTAINER
 
-I am working on how to upload this file to my website, so that you can download it through FTP.
+I am working on how and where to upload this file:
+
+- My personal website through FTP
+- Push it to Singularity library
+- Upload it to dropbox/icloud/onedrive with a sharable link
+- Somewhere else
+
+I intend to do the first two, but not yet have a clue...
 
 For the moment, you can contact me for it HAOYANG.YE AT CANTAB.NET
 
