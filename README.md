@@ -2,16 +2,15 @@
 
 ## HOW TO DOWNLOAD THE CONTAINER
 
-I am working on how and where to upload this file:
+Download it from my personal website
 
-- My personal website through FTP
-- Push it to Singularity library
-- Upload it to dropbox/icloud/onedrive with a sharable link
-- Somewhere else
+```
+wget http://haoyangye.com/presto_yhy.simg
+```
 
-I intend to do the first two, but not yet have a clue...
+I am also looking into **Push it to Singularity library**
 
-For the moment, you can contact me for it HAOYANG.YE AT CANTAB.NET
+You can issue a problem here or contact me for it HAOYANG.YE AT CANTAB.NET
 
 
 ## HOW TO USE THE CONTAINER
