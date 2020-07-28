@@ -31,3 +31,11 @@ This house is very portable for you - you can download it to any of your compute
 
 ## How to install SINGULARITY?
 
+Instructions see official website (https://sylabs.io/guides/3.0/user-guide/installation.html#)
+
+For **Ubuntu users**, you can simply follow Section 1 in *INSTALLATION RECORDS.md* under the same repo
+
+
+
+
+Feedbacks are welcome :smile:
