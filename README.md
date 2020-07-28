@@ -69,3 +69,17 @@ You can add more commands to use presto by appending the .sh file.
 For more presto tutorial, tune in https://www.cv.nrao.edu/~sransom/PRESTO_search_tutorial.pdf
 
 
+## MORE ABOUT THE CONTAINER
+
+If you want to find where the Presto folder is, please go to /PSRSOFT.
+
+You can also use the container as an ubuntu environment.
+
+The Singularity command you need is:
+
+```
+$ singularity shell presto_yhy.simg
+
+```
+
+
