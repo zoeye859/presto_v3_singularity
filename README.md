@@ -8,7 +8,7 @@ Download it from my personal website
 wget http://haoyangye.com/presto_yhy.simg
 ```
 
-I am also looking into **Push it to Singularity library**
+Want to know more about singularity container and singularity instructions, see *ReadMore.md* under the same github repo.
 
 You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
