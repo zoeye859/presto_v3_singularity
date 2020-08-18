@@ -45,6 +45,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib64:$PGPLOT_DIR:$ASTROSO
 # all other executables are found in $ASTROSOFT/bin
 export PATH=$PATH:$ASTROSOFT/bin:$PRESTO/bin:$PGPLOT_DIR
 
+### things you want presto to do
+
 
 readfile GBT_Lband_PSR.fil
 rfifind -time 1.0 -o Lband GBT_Lband_PSR.fil
@@ -52,9 +54,9 @@ exploredat Lband_topo_DM0.00.dat
 DDplan.py -d 500.0 -n 96 -b 96 -t 0.000072 -f 1400.0 -s 32 -r 0.5
 ```
 
-You may want to change the last two lines, to inform presto the location of the file GBT_Lband_PSR.fil
+You may want to change the last several lines, to inform presto the location of the file GBT_Lband_PSR.fil
 
-IF you want to obtain this file for test, download it by
+If you want to obtain this file for test, download it by
 ```
 wget http://www.cv.nrao.edu/~sransom/GBT_Lband_PSR.fil
 ```
