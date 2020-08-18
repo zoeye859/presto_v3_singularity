@@ -23,7 +23,6 @@ Create a presto_simg.sh as below:
 
 ```
 #!/bin/bash
-#ENVIRONMENT VARIABLES
 export ASTROSOFT=/PSRSOFT
 
 # OSTYPE
@@ -31,7 +30,7 @@ export OSTYPE=linux
 
 # PGPLOT
 export PGPLOT_DIR=$ASTROSOFT/pgplot
-export PGPLOT_DEV=/PS
+export PGPLOT_DEV=/xw
 
 #TEMPO
 export TEMPO=$ASTROSOFT/tempo
@@ -46,9 +45,11 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib64:$PGPLOT_DIR:$ASTROSO
 # all other executables are found in $ASTROSOFT/bin
 export PATH=$PATH:$ASTROSOFT/bin:$PRESTO/bin:$PGPLOT_DIR
 
-#YOUR COMMANDS FOR PRESTO HERE
-readfile GBT_Lband_PSR.fil 
-rfifind -time 2.0 -o Lband GBT_Lband_PSR.fil 
+
+readfile GBT_Lband_PSR.fil
+rfifind -time 1.0 -o Lband GBT_Lband_PSR.fil
+exploredat Lband_topo_DM0.00.dat
+DDplan.py -d 500.0 -n 96 -b 96 -t 0.000072 -f 1400.0 -s 32 -r 0.5
 ```
 
 You may want to change the last two lines, to inform presto the location of the file GBT_Lband_PSR.fil
