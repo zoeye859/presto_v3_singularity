@@ -50,6 +50,7 @@ export PATH=$PATH:$ASTROSOFT/bin:$PRESTO/bin:$PGPLOT_DIR
 
 readfile GBT_Lband_PSR.fil
 rfifind -time 1.0 -o Lband GBT_Lband_PSR.fil
+prepdata -nobary -o Lband_topo_DM0.00 -dm 0.0 -mask Lband_rfifind.mask -numout 530000 GBT_Lband_PSR.fil
 exploredat Lband_topo_DM0.00.dat
 DDplan.py -d 500.0 -n 96 -b 96 -t 0.000072 -f 1400.0 -s 32 -r 0.5
 ```
