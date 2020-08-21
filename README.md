@@ -12,6 +12,7 @@ Want to know more about singularity container and singularity instructions, see 
 
 You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
+**This container works perfectly under ubuntu, but it currently experiences X server problems with Mac OS**
 
 ## HOW TO USE THE CONTAINER
 
