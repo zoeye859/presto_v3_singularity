@@ -1,22 +1,29 @@
 # PRESTO 3.0.1 SINGULARITY CONTAINER
 
+It includes almost the full suite of Pulsar/FRB signal processing software: 
+
+- PRESTO
+- DSPSR 
+- SIGPROC
+- PSRCHIVE
+
 ## HOW TO DOWNLOAD THE CONTAINER
 
 Download it from my personal website
 
 ```
-wget http://haoyangye.com/presto_yhy.simg
+wget http://haoyangye.com/PSRSOFT_yhy.simg
 ```
 
 Want to know more about singularity container and singularity instructions, see *ReadMore.md* under the same github repo.
 
 You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
-**This container works perfectly under ubuntu, but it currently experiences X server problems with Mac OS**
+**This container works perfectly under linux, but it currently experiences X server problems with Mac OS**
 
 ## HOW TO USE THE CONTAINER
 
-Download presto_yhy.simg 
+Download PSRSOFT_yhy.simg 
 
 Put it somewhere on your computer.
 
@@ -36,8 +43,18 @@ export PGPLOT_DEV=/xw
 #TEMPO
 export TEMPO=$ASTROSOFT/tempo
 
+#TEMPO2
+export TEMPO2=/usr/local/tempo2
+
 # PRESTO
 export PRESTO=$ASTROSOFT/presto
+
+# PSRCAT
+export PSRCAT_RUNDIR=$ASTROSOFT/psrcat_tar
+export PSRCAT_FILE=$ASTROSOFT/psrcat_tar/psrcat.db
+
+# DSPSR
+export PATH=/sigproc/bin:$PATH
 
 # LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib64:$PGPLOT_DIR:$ASTROSOFT/lib:$PRESTO/lib:$ASTROSOFT/fftw-3.3.8/lib:$ASTROSOFT/cfitsio-3.48/lib:
@@ -46,17 +63,20 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/usr/lib64:$PGPLOT_DIR:$ASTROSO
 # all other executables are found in $ASTROSOFT/bin
 export PATH=$PATH:$ASTROSOFT/bin:$PRESTO/bin:$PGPLOT_DIR
 
-### things you want presto to do
+
+
+### things you want to do 
 
 
 readfile GBT_Lband_PSR.fil
 rfifind -time 1.0 -o Lband GBT_Lband_PSR.fil
 prepdata -nobary -o Lband_topo_DM0.00 -dm 0.0 -mask Lband_rfifind.mask -numout 530000 GBT_Lband_PSR.fil
-exploredat Lband_topo_DM0.00.dat
 DDplan.py -d 500.0 -n 96 -b 96 -t 0.000072 -f 1400.0 -s 32 -r 0.5
+
 ```
 
-You may want to change the last several lines, to inform presto the location of the file GBT_Lband_PSR.fil
+You may want to change the last several lines, to inform presto the location of the file GBT_Lband_PSR.fil, and add your own commands.
+
 
 If you want to obtain this file for test, download it by
 ```
