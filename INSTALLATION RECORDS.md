@@ -474,19 +474,200 @@ mv PSRSOFT /
 
 Done :+1:
 
-## 4.8 Install PRESTO
-
 # 5. Build PRESTO singularity box
 
 ```
 sudo singularity build presto-yhy.simg ubuntu/
 ```
 
-Then you can follow the README in this github to use the .simg
+*This container is no longer provided.*
+
+# 6. Add more Pulsar software to the singularity container
+
+Well, PRESTO itself seems not enough for me to find pulsars/FRBs, so I am installing the following software:
+
+- PSRCHIVE
+- SIGPROC
+- DSPSR
+- PSRCAT
+
+Download the source files first:
+
+```
+git clone git://git.code.sf.net/p/psrchive/code psrchive
+git clone https://github.com/SixByNine/sigproc.git
+git clone git://git.code.sf.net/p/dspsr/code dspsr
+wget https://www.atnf.csiro.au/people/pulsar/psrcat/downloads/psrcat_pkg.tar.gz
+```
+
+## 6.1 Install PSRCAT
+
+The easist one is PSRCAT. You can refer to instructions on (https://www.atnf.csiro.au/people/pulsar/psrcat/download.html)
+
+```
+gunzip psrcat_pkg.tar.gz
+tar -xvf psrcat_pkg.tar
+cd psrcat_tar
+source makeit
+cp psrcat $ASTROSOFT/bin
+```
+
+You then need to add the path for the .bashrc file
+
+```
+export PSRCAT_RUNDIR=$ASTROSOFT/psrcat_tar
+export PSRCAT_FILE=$ASTROSOFT/psrcat_tar/psrcat.db
+```
+
+Test can be found at (https://www.atnf.csiro.au/people/pulsar/psrcat/download.html).
+
+## 6.2 Install PSRCHIVE
+
+Firtly, need GNU_Build System, see (http://psrchive.sourceforge.net/third/autotools/)
+
+Download script for GNU_Build:
+
+```
+#!/bin/bash
 
 
+export mirror=http://ftp.gnu.org/gnu
 
 
+echo downloading from $mirror
 
 
+echo downloading m4 ...
+curl -O -f -L $mirror/m4/m4-1.4.6.tar.gz
 
+
+echo downloading autoconf ...
+curl -O -f -L $mirror/autoconf/autoconf-2.60.tar.gz
+
+
+echo downloading automake ...
+curl -O -f -L $mirror/automake/automake-1.9.6.tar.gz
+
+
+echo downloading libtool ...
+curl -O -f -L $mirror/libtool/libtool-1.5.8.tar.gz
+```
+
+Install script:
+
+```
+#! /bin/bash 
+  
+if ( $?ASTROSOFT ) then
+  export prefix=$ASTROSOFT/packages/$LOGIN_ARCH
+else
+  export prefix=/usr/local
+endif
+alias rehash='hash -r'
+alias MAKE="./configure --prefix=$prefix; make; make install; rehash; cd .."
+
+echo installing in $prefix
+
+export PATH=${prefix}:${PATH}
+
+echo unpacking m4 ...
+gunzip -c m4-1.4.6.tar.gz | tar xf -
+cd m4-1.4.6
+MAKE
+
+echo unpacking autoconf ...
+gunzip -c autoconf-2.60.tar.gz | tar xf -
+cd autoconf-2.60
+MAKE
+
+gunzip -c automake-1.9.6.tar.gz | tar xf -
+cd automake-1.9.6
+MAKE
+
+gunzip -c libtool-1.5.8.tar.gz | tar xf -
+cd libtool-1.5.8
+MAKE
+```
+
+Now, it's time to install PSRCHIVE!!
+
+```
+git clone git://git.code.sf.net/p/psrchive/code psrchive
+cd psrchive
+./bootstrap
+./configure
+make
+make install
+make clean
+```
+
+After "./configure”, it told me that I haven’t installed the TEMPO2, so I just installed it as directed — super easy!
+It told me that TEMPO2 was succuessfully installed, then do "./configure” again
+
+The 'make' and 'make install' took me a while. 
+
+
+## 6.3 Install SIGPROC
+
+The SourceForge distribution didn't work for me. So I had to turn to Mike Keith's.
+
+```
+cd sigproc
+./bootstrap
+./configure --prefix=$PSRSOFT_DIR/sigproc F77=gfortran CFLAGS=-fPIC FFLAGS=-fPIC
+make
+make install
+make clean
+```
+
+When 'make', if there is an error saying it cannot find -l(xxxx), then try to locate the lib(xxxx).so file by
+
+```
+find /usr/ -iname lib(xxxx).so
+```
+
+and then copy it to /usr/lib/, the error should be solved.
+
+However, after the installation with no errors reported, I still cannot run the famous "filterbank" command. I consider this an unsuccessful installation.
+
+## 6.4 Install DSPSR
+
+```
+cd dspsr
+vi backends.list
+
+##insert
+##apsr asp bcpm bpsr caspsr cpsr2 cpsr dummy fits gmrt guppi kat lbadr64 lbadr lump lwa mark4 mark5 maxim mwa pdev pmdaq s2 sigproc spda1k spigot vdif##
+
+./configure --prefix=$PSRSOFT_DIR/sigproc F77=gfortran CFLAGS=-fPIC FFLAGS=-fPIC
+
+make
+make install
+make clean
+
+# DSPSR
+export PATH=/sigproc/bin:$PATH
+```
+
+This DSPSR actually helped me to install sigproc successfully. I am happy.
+
+You can test it by typing 
+
+```
+dspsr
+```
+
+or
+
+```
+filterbank
+```
+
+
+# 7. Build PRESTO singularity box
+
+```
+sudo singularity build PSRSOFT_yhy.simg ubuntu/
+```
+
+Now you can follow the README in this github to use the .simg
