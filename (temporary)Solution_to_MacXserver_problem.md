@@ -1,6 +1,6 @@
-#Guide to solve the X server problem for Mac users
+# Guide to solve the X server problem for Mac users
 
-#(Not fully tested yet)#
+*(Not fully tested yet)*
 
 Download the newest singularity container (have more pulsar searching software included, see README.md), and then run it on your Mac.
 
