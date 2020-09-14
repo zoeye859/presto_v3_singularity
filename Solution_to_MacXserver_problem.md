@@ -1,6 +1,5 @@
 # Guide to solve the X server problem for Mac users
 
-*(Not fully tested yet)*
 
 Download the newest singularity container (have more pulsar searching software included, see README.md), and then run it on your Mac.
 
@@ -16,30 +15,36 @@ Download the newest singularity container (have more pulsar searching software i
 
 Once downloaded, double click to open, you will see an installer and an uninstaller. If you have installed a singularity desktop before, please do the uninstaller first and then install.
 
-## 3. Check whether XQuarz on your computer is properly installed
+## 3. Download XQuarz on your Mac
 
-use "ssh -X” to connect to a random ubuntu machine, and then type
+(https://www.xquartz.org/index.html)
+
+
+## 4. Check whether XQuarz on your computer is properly installed
+
+If this is your first time to install XQuartz, you need to log out and log in after your installation to update your DISPLAY environment.
+
+Then type
 
 ```
-> xclock
+> xeyes
 ```
+in your terminal to see whether you can see a pair of eyes jumping up. If yes, then this means the XQuarz is fully installed.
 
-in a terminal to see whether you can see a clock jumping up. If yes, then this means the XQuarz is fully installed.
+If you cannot see the cute eyes (the tiny eye balls would move according to the movement of your mouse!), do check the installation of XQuartz on your Mac.
 
-If you cannot see this clock, do check the installation of XQuartz on your Mac.
-
-After that, go to XQuartz preferences, under the Security tap, check the box that says: Allow connections from network clients
+After that, **go to XQuartz preferences, under the Security tap, check the box that says: *Allow connections from network clients**
 
 Restart XQuartz
 
-## 4. Run the following two commands
+## 5. Run the following two commands
 
 ```
 > export DISPLAY=:0
 > /opt/X11/bin/xhost +
 ```
 
-## 5. Test the container
+## 6. Test the container
 
 ```
 > singularity shell PSRSOFT_yhy.simg
@@ -48,17 +53,5 @@ Restart XQuartz
 ```
 
 You should see a series of pop-up images now.
-
-## Extra
-
-If still find problems connecting to the X server, try this:
-
-```
-sudo vi /etc/ssh/sshd_config
-Change the following two lines:
-
-X11Forwarding yes
-X11UseLocalhost yes
-```
 
 
