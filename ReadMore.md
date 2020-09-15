@@ -35,6 +35,10 @@ Instructions see official website (https://sylabs.io/guides/3.0/user-guide/insta
 
 For **Ubuntu users**, you can simply follow Section 1 in *INSTALLATION RECORDS.md* under the same repo
 
+For **Mac users**, you can download the Singulairty desktop at (https://sylabs.io/singularity-desktop-macos/)
+
+- Once downloaded, double click to open, you will see an installer and an uninstaller. If you have installed a singularity desktop before, please do the uninstaller first and then install.
+
 
 
 
