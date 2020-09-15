@@ -7,6 +7,12 @@ It includes almost the full suite of Pulsar/FRB signal processing software:
 - SIGPROC
 - PSRCHIVE
 
+System:
+
+- Linux
+- Mac OS (see https://github.com/zoeye859/presto_v3_singularity/blob/master/Solution_to_MacXserver_problem.md)
+
+
 ## HOW TO DOWNLOAD THE CONTAINER
 
 Download it from my personal website
@@ -19,7 +25,8 @@ Want to know more about singularity container and singularity instructions, see 
 
 You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
-**This container works perfectly under linux, but it currently experiences X server problems with Mac OS**
+
+
 
 ## HOW TO USE THE CONTAINER
 
