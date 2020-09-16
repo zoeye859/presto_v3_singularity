@@ -25,7 +25,10 @@ Want to know more about singularity container and singularity instructions, see 
 
 You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
+If you find the **download speed is too slow
 
+- Users in China: Baidu drive:https://pan.baidu.com/s/1I9WTJIAg95NH86dNK7hkmg  password:kc0l
+- Or you can contact me (*HAOYANG.YE AT CANTAB.NET*) to arrange a Wetransfer job
 
 
 ## HOW TO USE THE CONTAINER
