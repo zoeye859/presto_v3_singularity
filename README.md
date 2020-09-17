@@ -36,7 +36,7 @@ You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
 If you find the **download is too slow**
 
-- Users in China: Baidu drive:https://pan.baidu.com/s/1LVFsvPhX1ipcAnni0xO79A  password:j4yb
+- Users in China: Baidu drive:https://pan.baidu.com/s/1QFbZANlXYdUHk4C2MlFdfw  password:c9jd  
 - Or you can contact me (*HAOYANG.YE AT CANTAB.NET*) to arrange a **Wetransfer** job
 
 
