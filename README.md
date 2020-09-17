@@ -12,6 +12,15 @@ System:
 - Linux
 - Mac OS (see https://github.com/zoeye859/presto_v3_singularity/blob/master/Solution_to_MacXserver_problem.md)
 
+## Version
+
+Currently, I have the following versions of the container:
+
+- presto_yhy.simg (PRESTO V3 only)
+- PSRSOFT_yhy1.0.simg (add DSPSR, SIGPROC and PSRCHIVE) and PSRSOFT_yhy1.0.img (for Windows users)
+- PSRSOFT_yhy1.1.simg (reinstalled tempo2 to solve the reported issue #3 )
+
+The **PSRSOFT_yhy1.1.simg** is recommended (updated on 17 Sept 2020).
 
 ## HOW TO DOWNLOAD THE CONTAINER
 
@@ -27,8 +36,8 @@ You can issue a problem here or contact me *HAOYANG.YE AT CANTAB.NET*
 
 If you find the **download speed is too slow
 
-- Users in China: Baidu drive:https://pan.baidu.com/s/1I9WTJIAg95NH86dNK7hkmg  password:kc0l
-- Or you can contact me (*HAOYANG.YE AT CANTAB.NET*) to arrange a Wetransfer job
+- Users in China: Baidu drive:https://pan.baidu.com/s/1LVFsvPhX1ipcAnni0xO79A  password:j4yb
+- Or you can contact me (*HAOYANG.YE AT CANTAB.NET*) to arrange a **Wetransfer** job
 
 
 ## HOW TO USE THE CONTAINER
