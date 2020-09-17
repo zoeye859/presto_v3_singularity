@@ -27,7 +27,7 @@ The **PSRSOFT_yhy1.1.simg** is recommended (updated on 17 Sept 2020).
 Download it from my personal website
 
 ```
-wget http://haoyangye.com/PSRSOFT_yhy.simg
+wget http://haoyangye.com/PSRSOFT_yhy1.1.simg
 ```
 
 Want to know more about singularity container and singularity instructions, see *ReadMore.md* under the same github repo.
